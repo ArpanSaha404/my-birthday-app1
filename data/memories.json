@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "date": "March 2026",
+    "title": "The Unexpected Introduction",
+    "description": "Met in a cs event. You opened your mouth. I made a mistake and paid attention.",
+    "image": "https://images.unsplash.com/photo-1688986760609-47835488547a?w=600&h=400&fit=crop"
+  },
+  {
+    "id": 2,
+    "date": "March 2026",
+    "title": "Didn't See That Coming",
+    "description": "Event ended. Conversation didn't. Honestly your fault.",
+    "image": "https://images.unsplash.com/photo-1576176243977-7c62b6472a31?w=600&h=400&fit=crop"
+  },
+  {
+    "id": 3,
+    "date": "April 2026",
+    "title": "Same Energy",
+    "description": "Turns out we're more alike than either of us planned. I respect it. I also blame you for this entire situation.",
+    "image": "https://images.unsplash.com/photo-1501631259223-89d4e246ed23?w=600&h=400&fit=crop"
+  },
+  {
+    "id": 4,
+    "date": "May 2026",
+    "title": "The Mess up Stories",
+    "description": "I slipped up once. You laughed all night. Sharing was either genius or a disaster. Now it's your go-to weapon. Still not sure which one it was.",
+    "image": "https://images.unsplash.com/photo-1466979939565-131c4b39a51b?w=600&h=400&fit=crop"
+  },
+  {
+    "id": 5,
+    "date": "June 2026",
+    "title": "The Late Night Ones",
+    "description": "2 AM convos that should've ended at 11. Nobody logged off first. Nobody's admitting why.",
+    "image": "https://images.unsplash.com/photo-1768732774706-c83796d38ef1?w=600&h=400&fit=crop"
+  },
+  {
+    "id": 6,
+    "date": "Today",
+    "title": "Your Special Day",
+    "description": "Another year. Still the most interesting person in my notifications. You're welcome for this and you're not getting rid of me anytime soon.",
+    "image": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop"
+  }
+]

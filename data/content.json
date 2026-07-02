@@ -1,0 +1,76 @@
+{
+  "passcode": "1234",
+  "recipientName": "Dear",
+  "heroTitle": "Happy Birthday",
+  "heroSubtitle": "To the most amazing person I know",
+  "showTimeline": "y",
+  "timezone": "Asia/Jakarta",
+  "unlockDate": "2026-07-03T00:00:00",
+  "countdown": {
+    "title": "Not Yet! 🤫",
+    "subtitle": "Come back on 3rd July 12:00 AM",
+    "emoji": "💕"
+  },
+  "birthdayCard": {
+    "quote": "Another year more radiant and incredible than the last ✨",
+    "gif": "https://media1.tenor.com/m/1nIDXbABxgsAAAAd/gif-gifkk.gif"
+  },
+  "ageCard": {
+    "age": 25,
+    "birthDate": "2001-07-02",
+    "gif": "https://media1.tenor.com/m/tPJaogUqo8wAAAAd/happy-birthday.gif",
+    "shiningText": "You've been shining for"
+  },
+  "flipCards": {
+    "title": "You're Incredible",
+    "cards": [
+      { "id": 1, "message": "Your kindness makes the world brighter every single day 💛" },
+      { "id": 2, "message": "You light up every room you walk into ✨" },
+      { "id": 3, "message": "Your strength inspires everyone around you 💪" },
+      { "id": 4, "message": "You deserve all the happiness in the universe 🌟" },
+      { "id": 5, "message": "Every moment with you is a memory I treasure 💕" },
+      { "id": 6, "message": "You are loved more than words can ever say 💖" }
+    ]
+  },
+  "cakeSection": {
+    "gif": "https://media1.tenor.com/m/kUhp6mMNMokAAAAd/happy-birthday.gif"
+  },
+  "finalCard": {
+    "messageLine1": "You make every single day feel like a celebration. Here's to us, to laughter, to love, and to a thousand more memories together.",
+    "messageLine2": "Cheers to the most perfect person I know! 🥂",
+    "gif": "https://media1.tenor.com/m/lblNUfnd_1UAAAAd/brown-cony.gif"
+  },
+  "loveLetter": {
+    "title": "A Letter For You",
+    "paragraphs": [
+      "Okay, let's be real — out of all the random match ups of KC Events, you had to end up in mine. Statistically suspicious. Personally, not complaining.",
+      "You're genuinely one of the most interesting people I've come across in a while. Funny, a little chaotic, weirdly good at things — and somehow still humble about it. It's honestly kind of annoying.",
+      "I'm not writing this to make things weird. I'm writing this because it's your birthday and you deserve something that takes actual efforts — and I wanted to make something that counts.",
+      "So here's to you. Another year older, still impossibly hard to ignore. Happy Birthday. 🎂"
+    ],
+    "signOff": "Boldly yours,",
+    "senderName": "You know who"
+  },
+  "lockScreen": {
+    "greeting": "A special surprise for someone special",
+    "subtitle": "Enter the passcode"
+  },
+  "footer": {
+    "message": "Made with ❤️ just for you",
+    "year": 2026
+  },
+  "DataToChangeLater": {
+    "passcode": "2207",
+    "passcode2": "0308",
+    "timezone": "Asia/Jakarta",
+    "timezone2": "Asia/Kolkata",
+    "unlockDate": "2026-08-03T00:00:00",
+    "unlockDate2": "2026-07-22T00:00:00",
+    "countdown.subtitle": "Come back on 22nd July 12:00 AM",
+    "countdown.subtitle2": "Come back on 3rd August 12:00 AM",
+    "ageCard.age": 22,
+    "ageCard.age2": 18,
+    "ageCard.birthDate": "2002-07-02",
+    "ageCard.birthDate2": "2008-07-02"
+  }
+}
