@@ -1,11 +1,11 @@
 {
-  "passcode": "1234",
+  "passcode": "2207",
   "recipientName": "Dear",
   "heroTitle": "Happy Birthday",
   "heroSubtitle": "To the most amazing person I know",
   "showTimeline": "y",
   "timezone": "Asia/Jakarta",
-  "unlockDate": "2026-07-03T00:00:00",
+  "unlockDate": "2026-07-22T00:00:00",
   "countdown": {
     "title": "Not Yet! 🤫",
     "subtitle": "Come back on 3rd July 12:00 AM",
@@ -16,8 +16,8 @@
     "gif": "https://media1.tenor.com/m/1nIDXbABxgsAAAAd/gif-gifkk.gif"
   },
   "ageCard": {
-    "age": 25,
-    "birthDate": "2001-07-02",
+    "age": 24,
+    "birthDate": "2002-07-22",
     "gif": "https://media1.tenor.com/m/tPJaogUqo8wAAAAd/happy-birthday.gif",
     "shiningText": "You've been shining for"
   },
