@@ -184,7 +184,6 @@ export default function LockScreen({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             className="absolute opacity-0 w-0 h-0"
-            autoFocus
             autoComplete="off"
           />
 
