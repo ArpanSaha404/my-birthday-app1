@@ -69,17 +69,21 @@ export default function LockScreen({
 
   useEffect(() => {
     const checkTime = () => {
-      // Get current time in the configured timezone
+      // Get current time in the configured timezone using locale-based string comparison
+      const nowInTzStr = new Date().toLocaleString("sv-SE", { timeZone: timezone }).replace(" ", "T");
+      // nowInTzStr is like "2026-07-08T00:00:00" — directly comparable with unlockDate
+
+      if (nowInTzStr >= unlockDate) {
+        setIsUnlockTime(true);
+        return;
+      }
+
+      // For countdown calculation
       const nowInTz = new Date(
         new Date().toLocaleString("en-US", { timeZone: timezone })
       );
       const target = new Date(unlockDate);
       const diff = target.getTime() - nowInTz.getTime();
-
-      if (diff <= 0) {
-        setIsUnlockTime(true);
-        return;
-      }
 
       setIsUnlockTime(false);
       const totalSeconds = Math.floor(diff / 1000);

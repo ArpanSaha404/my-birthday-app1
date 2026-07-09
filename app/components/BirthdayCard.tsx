@@ -16,7 +16,7 @@ export default function BirthdayCard({ quote, gif }: BirthdayCardProps) {
   }, []);
 
   return (
-    <section className="py-16 px-6" id="birthday-card-section">
+    <section className="py-16 pb-24 md:pb-16 px-6" id="birthday-card-section">
       <div
         className={`max-w-sm mx-auto transition-all duration-1000 ${
           visible ? "opacity-100 scale-100" : "opacity-0 scale-90"

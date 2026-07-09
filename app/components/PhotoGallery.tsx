@@ -76,7 +76,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
                 💕
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-4 sm:top-auto sm:bottom-0 sm:bg-gradient-to-t sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
               <p className="text-white text-sm font-medium">{photo.caption}</p>
             </div>
           </div>
