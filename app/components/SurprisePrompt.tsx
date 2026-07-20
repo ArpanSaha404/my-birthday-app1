@@ -23,6 +23,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
   const [exiting, setExiting] = useState(false);
   const [yesClicked, setYesClicked] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const yesButtonRef = useRef<HTMLButtonElement>(null);
 
   // Loading phase
   useEffect(() => {
@@ -53,8 +54,30 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
     const maxX = container.width - btnW - safeMargin;
     const maxY = container.height - btnH - safeMargin;
 
-    const x = safeMargin + Math.random() * Math.max(0, maxX - safeMargin);
-    const y = safeMargin + Math.random() * Math.max(0, maxY - safeMargin);
+    // Get Yes button bounds to avoid overlap
+    const yesRect = yesButtonRef.current?.getBoundingClientRect();
+    const exclusionPadding = 20;
+
+    let x: number, y: number;
+    let attempts = 0;
+    do {
+      x = safeMargin + Math.random() * Math.max(0, maxX - safeMargin);
+      y = safeMargin + Math.random() * Math.max(0, maxY - safeMargin);
+      attempts++;
+
+      if (!yesRect || attempts > 50) break;
+
+      // Check if the No button rect overlaps with the Yes button rect (with padding)
+      const noRight = x + btnW;
+      const noBottom = y + btnH;
+      const yesLeft = yesRect.left - container.left - exclusionPadding;
+      const yesTop = yesRect.top - container.top - exclusionPadding;
+      const yesRight = yesRect.right - container.left + exclusionPadding;
+      const yesBottom = yesRect.bottom - container.top + exclusionPadding;
+
+      const overlaps = x < yesRight && noRight > yesLeft && y < yesBottom && noBottom > yesTop;
+      if (!overlaps) break;
+    } while (true);
 
     setNoPosition({ x, y });
   }, [data.noTexts.length]);
@@ -143,6 +166,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
         {!yesClicked && (
           <div className="flex gap-4 mt-4">
             <button
+              ref={yesButtonRef}
               onClick={handleYes}
               className="min-w-[160px] px-6 py-3.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold text-lg rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all duration-300"
             >
