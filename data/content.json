@@ -5,7 +5,7 @@
   "heroSubtitle": "To the most amazing person I know",
   "showTimeline": "y",
   "timezone": "Asia/Jakarta",
-  "unlockDate": "2026-07-22T00:00:00",
+  "unlockDate": "2026-07-12T00:00:00",
   "countdown": {
     "title": "Not Yet! 🤫",
     "subtitle": "Come back on 22nd July 12:00 AM",
@@ -52,8 +52,29 @@
     "senderName": "You know who"
   },
   "lockScreen": {
-    "greeting": "A special surprise for someone special",
+    "greeting": "A special surprise for a special someone",
     "subtitle": "Enter the passcode"
+  },
+  "showSurprisePrompt": "y",
+  "surprisePrompt": {
+    "loadingText": "Preparing something special...",
+    "question": "Are you ready for your surprise?",
+    "yesText": "Yes! 🎉",
+    "yesGif": "https://media1.tenor.com/m/YNw9-lYQqMEAAAAd/bear-cute-kiss.gif",
+    "noTexts": [
+      "No 😐",
+      "Are you sure? 🥺",
+      "Think again dear 🫠",
+      "Pretty please? 🥹",
+      "Wrong answer 😤"
+    ],
+    "gifs": [
+      "https://media.tenor.com/60hyIgK_L_8AAAAj/tonibear-bubu.gif",
+      "https://media.tenor.com/4Hjm_J72ZEcAAAAj/milk-mocha-bear-cheek-pull.gif",
+      "https://media.tenor.com/s7WHtFALjkIAAAAj/bubu-dudu-bubu.gif",
+      "https://media.tenor.com/z7ZABFfLkn8AAAAj/kh%C3%B3c.gif",
+      "https://media1.tenor.com/m/zkvh5c3BkKoAAAAd/cute-adorable.gif"
+    ]
   },
   "footer": {
     "message": "Made with ❤️ just for you",

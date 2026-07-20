@@ -1,20 +1,38 @@
 [
   {
     "id": 1,
-    "src": "/images/shared image syca 3.jpg",
-    "alt": "Our moment together",
+    "src": "/images/shared image syca 4.jpg",
+    "alt": "Our beautiful moment together",
     "caption": "Caught you being cute again 😏"
   },
   {
     "id": 2,
     "src": "/images/shared image syca 2.jpg",
-    "alt": "Our moment together",
-    "caption": "Living rent free in my head (don't get ideas) 🙄"
+    "alt": "Adventures together",
+    "caption": "I'd follow you into trouble any day 😤"
   },
   {
     "id": 3,
-    "src": "/images/shared image syca.jpg",
-    "alt": "Our moment together",
+    "src": "/images/shared image syca 1.jpg",
+    "alt": "Together forever",
+    "caption": "Living rent free in my head 🙄"
+  },
+  {
+    "id": 4,
+    "src": "/images/shared image syca 5.jpg",
+    "alt": "Special occasion",
+    "caption": "Making memories one screenshot at a time 📸"
+  },
+  {
+    "id": 5,
+    "src": "/images/shared image syca 6.jpg",
+    "alt": "Smiling together",
+    "caption": "Your smile is my favorite (don't get ideas)"
+  },
+  {
+    "id": 6,
+    "src": "/images/shared image syca 7.jpg",
+    "alt": "Love in every moment",
     "caption": "Not stalking, just paying attention 👀"
   }
 ]

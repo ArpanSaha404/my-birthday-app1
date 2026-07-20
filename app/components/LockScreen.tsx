@@ -164,7 +164,7 @@ export default function LockScreen({
       {isUnlockTime ? (
         /* Passcode input mode */
         <div className="flex flex-col items-center gap-6 relative z-10">
-          <p className="text-lg font-light text-center opacity-90 max-w-xs">
+          <p className="text-lg font-light text-center opacity-90 whitespace-nowrap">
             {lockScreenData.greeting}
           </p>
           <p className="text-sm opacity-60">{lockScreenData.subtitle}</p>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import LockScreen from "./components/LockScreen";
+import SurprisePrompt from "./components/SurprisePrompt";
 import HeroSection from "./components/HeroSection";
 import BirthdayCard from "./components/BirthdayCard";
 import AgeCard from "./components/AgeCard";
@@ -19,10 +20,22 @@ import gallery from "../data/gallery.json";
 
 export default function Home() {
   const [unlocked, setUnlocked] = useState(false);
+  const [promptDone, setPromptDone] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+
+  const showSurprisePrompt = content.showSurprisePrompt === "y";
 
   const handleUnlock = () => {
     setUnlocked(true);
+    if (!showSurprisePrompt) {
+      setPromptDone(true);
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000);
+    }
+  };
+
+  const handlePromptReady = () => {
+    setPromptDone(true);
     setShowConfetti(true);
     setTimeout(() => setShowConfetti(false), 5000);
   };
@@ -36,6 +49,15 @@ export default function Home() {
         timezone={content.timezone}
         countdown={content.countdown}
         onUnlock={handleUnlock}
+      />
+    );
+  }
+
+  if (showSurprisePrompt && !promptDone) {
+    return (
+      <SurprisePrompt
+        data={content.surprisePrompt}
+        onReady={handlePromptReady}
       />
     );
   }
