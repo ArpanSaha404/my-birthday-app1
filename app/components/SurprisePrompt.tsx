@@ -46,15 +46,15 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
     });
 
     const container = containerRef.current.getBoundingClientRect();
-    const btnW = 160;
-    const btnH = 50;
-    const padding = 30;
+    const btnW = 200;
+    const btnH = 56;
+    const safeMargin = 40;
 
-    const maxX = Math.max(padding, container.width - btnW - padding);
-    const maxY = Math.max(padding, container.height - btnH - padding);
+    const maxX = container.width - btnW - safeMargin;
+    const maxY = container.height - btnH - safeMargin;
 
-    const x = padding + Math.random() * (maxX - padding);
-    const y = padding + Math.random() * (maxY - padding);
+    const x = safeMargin + Math.random() * Math.max(0, maxX - safeMargin);
+    const y = safeMargin + Math.random() * Math.max(0, maxY - safeMargin);
 
     setNoPosition({ x, y });
   }, [data.noTexts.length]);
@@ -144,7 +144,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
           <div className="flex gap-4 mt-4">
             <button
               onClick={handleYes}
-              className="w-36 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold text-lg rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all duration-300"
+              className="min-w-[160px] px-6 py-3.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold text-lg rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all duration-300"
             >
               {data.yesText}
             </button>
@@ -155,7 +155,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
                 onClick={moveNoButton}
                 onMouseEnter={moveNoButton}
                 onTouchStart={(e) => { e.preventDefault(); moveNoButton(); }}
-                className="w-36 py-3 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer"
+                className="min-w-[160px] px-6 py-3.5 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer"
               >
                 {data.noTexts[0]}
               </button>
@@ -170,7 +170,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
           onClick={moveNoButton}
           onMouseEnter={moveNoButton}
           onTouchStart={(e) => { e.preventDefault(); moveNoButton(); }}
-          className="absolute w-36 py-3 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 transition-all duration-300 ease-out cursor-pointer z-20 whitespace-nowrap"
+          className="absolute min-w-[160px] px-6 py-3.5 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 transition-all duration-300 ease-out cursor-pointer z-20 whitespace-nowrap"
           style={{
             left: noPosition.x,
             top: noPosition.y,
