@@ -24,6 +24,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
   const [yesClicked, setYesClicked] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const yesButtonRef = useRef<HTMLButtonElement>(null);
+  const gifRef = useRef<HTMLDivElement>(null);
 
   // Loading phase
   useEffect(() => {
@@ -54,9 +55,29 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
     const maxX = container.width - btnW - safeMargin;
     const maxY = container.height - btnH - safeMargin;
 
-    // Get Yes button bounds to avoid overlap
-    const yesRect = yesButtonRef.current?.getBoundingClientRect();
+    // Get exclusion zones (Yes button + GIF) to avoid overlap
     const exclusionPadding = 20;
+    const exclusionRects: { left: number; top: number; right: number; bottom: number }[] = [];
+
+    const yesRect = yesButtonRef.current?.getBoundingClientRect();
+    if (yesRect) {
+      exclusionRects.push({
+        left: yesRect.left - container.left - exclusionPadding,
+        top: yesRect.top - container.top - exclusionPadding,
+        right: yesRect.right - container.left + exclusionPadding,
+        bottom: yesRect.bottom - container.top + exclusionPadding,
+      });
+    }
+
+    const gifRect = gifRef.current?.getBoundingClientRect();
+    if (gifRect) {
+      exclusionRects.push({
+        left: gifRect.left - container.left - exclusionPadding,
+        top: gifRect.top - container.top - exclusionPadding,
+        right: gifRect.right - container.left + exclusionPadding,
+        bottom: gifRect.bottom - container.top + exclusionPadding,
+      });
+    }
 
     let x: number, y: number;
     let attempts = 0;
@@ -65,17 +86,14 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
       y = safeMargin + Math.random() * Math.max(0, maxY - safeMargin);
       attempts++;
 
-      if (!yesRect || attempts > 50) break;
+      if (exclusionRects.length === 0 || attempts > 50) break;
 
-      // Check if the No button rect overlaps with the Yes button rect (with padding)
       const noRight = x + btnW;
       const noBottom = y + btnH;
-      const yesLeft = yesRect.left - container.left - exclusionPadding;
-      const yesTop = yesRect.top - container.top - exclusionPadding;
-      const yesRight = yesRect.right - container.left + exclusionPadding;
-      const yesBottom = yesRect.bottom - container.top + exclusionPadding;
 
-      const overlaps = x < yesRight && noRight > yesLeft && y < yesBottom && noBottom > yesTop;
+      const overlaps = exclusionRects.some(
+        (rect) => x < rect.right && noRight > rect.left && y < rect.bottom && noBottom > rect.top
+      );
       if (!overlaps) break;
     } while (true);
 
@@ -148,7 +166,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
         }`}
       >
         {/* GIF */}
-        <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
+        <div ref={gifRef} className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
           <img
             key={yesClicked ? "yes" : currentGifIndex}
             src={yesClicked ? data.yesGif : data.gifs[currentGifIndex]}
