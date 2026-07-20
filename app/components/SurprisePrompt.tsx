@@ -25,6 +25,7 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const yesButtonRef = useRef<HTMLButtonElement>(null);
   const gifRef = useRef<HTMLDivElement>(null);
+  const lastMoveTime = useRef(0);
 
   // Loading phase
   useEffect(() => {
@@ -37,6 +38,11 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
 
   const moveNoButton = useCallback(() => {
     if (!containerRef.current) return;
+
+    // Debounce: ignore rapid calls within 400ms
+    const now = Date.now();
+    if (now - lastMoveTime.current < 400) return;
+    lastMoveTime.current = now;
 
     // If already at last text, hide the button entirely
     setNoIndex((prev) => {
