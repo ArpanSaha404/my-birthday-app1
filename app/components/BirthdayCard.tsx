@@ -16,7 +16,7 @@ export default function BirthdayCard({ quote, gif }: BirthdayCardProps) {
   }, []);
 
   return (
-    <section className="py-16 pb-[50vh] sm:pb-16 px-6" id="birthday-card-section">
+    <section className="py-16 px-6" id="birthday-card-section">
       <div
         className={`max-w-sm mx-auto transition-all duration-1000 ${
           visible ? "opacity-100 scale-100" : "opacity-0 scale-90"
@@ -43,6 +43,29 @@ export default function BirthdayCard({ quote, gif }: BirthdayCardProps) {
             <span className="animate-bounce" style={{ animationDelay: "0.2s" }}>💗</span>
             <span className="animate-bounce" style={{ animationDelay: "0.4s" }}>💖</span>
           </div>
+        </div>
+
+        {/* Scroll down arrow */}
+        <div
+          className="mt-8 animate-bounce cursor-pointer"
+          onClick={() => {
+            const nextSection = document.getElementById("age-card-section");
+            nextSection?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <svg
+            className="w-8 h-8 mx-auto text-rose-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
         </div>
       </div>
     </section>

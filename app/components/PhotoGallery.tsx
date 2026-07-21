@@ -38,7 +38,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
   }, [photos]);
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6" id="photo-gallery-section">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
         Celebrating You 📸
       </h2>

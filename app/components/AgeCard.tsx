@@ -64,7 +64,7 @@ export default function AgeCard({ age, birthDate, gif, shiningText }: AgeCardPro
   const animatedDays = useCountUp(targetDays, 2500, visible);
 
   return (
-    <section ref={sectionRef} className="py-16 px-6">
+    <section ref={sectionRef} className="py-16 px-6" id="age-card-section">
       <div
         className={`max-w-sm mx-auto transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -105,6 +105,29 @@ export default function AgeCard({ age, birthDate, gif, shiningText }: AgeCardPro
             <span>💫</span>
             <span>🌟</span>
           </div>
+        </div>
+
+        {/* Scroll down arrow */}
+        <div
+          className="mt-8 animate-bounce cursor-pointer"
+          onClick={() => {
+            const nextSection = document.getElementById("photo-gallery-section");
+            nextSection?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <svg
+            className="w-8 h-8 mx-auto text-rose-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
         </div>
       </div>
     </section>

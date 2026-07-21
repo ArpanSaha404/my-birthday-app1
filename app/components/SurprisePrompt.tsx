@@ -201,7 +201,6 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
             {!noHidden && noPosition === null && (
               <button
                 onClick={moveNoButton}
-                onMouseEnter={moveNoButton}
                 onTouchStart={(e) => { e.preventDefault(); moveNoButton(); }}
                 className="min-w-[160px] px-6 py-3.5 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer"
               >
@@ -216,7 +215,6 @@ export default function SurprisePrompt({ data, onReady }: SurprisePromptProps) {
       {!noHidden && noPosition !== null && (
         <button
           onClick={moveNoButton}
-          onMouseEnter={moveNoButton}
           onTouchStart={(e) => { e.preventDefault(); moveNoButton(); }}
           className="absolute min-w-[160px] px-6 py-3.5 bg-white/10 backdrop-blur-md text-white/70 font-medium rounded-full border border-white/20 transition-all duration-300 ease-out cursor-pointer z-20 whitespace-nowrap"
           style={{
